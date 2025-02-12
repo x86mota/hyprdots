@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+source global-functions
+
+if pgrep -x "waybar" >/dev/null; then
+    _endProcess "waybar"
+fi
+
+waybar &

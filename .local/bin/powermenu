@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+source global-functions
+
+CONFIG="${HOME}/.config/wofi/powermenu/powermenu.conf"
+STYLE="${HOME}/.config/wofi/powermenu/powermenu.css"
+lock=""
+logout=""
+reboot=""
+shutdown="⏻"
+options="${lock}\n${logout}\n${reboot}\n${shutdown}"
+choice="$(echo -e "${options}" | wofi --conf="${CONFIG}" --style="${STYLE}")"
+
+case "${choice}" in
+    "")
+        hyprlock
+        ;;
+    "")
+        _Confirm && hyprctl dispatch exit
+        ;;
+    "")
+        _Confirm && systemctl reboot
+        ;;
+    "⏻")
+        _Confirm && systemctl poweroff
+        ;;
+    *)
+        exit 0
+        ;;
+esac

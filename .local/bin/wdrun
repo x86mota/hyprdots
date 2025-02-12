@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+CONFIG="$HOME/.config/wofi/drun/drun.conf"
+STYLE="$HOME/.config/wofi/drun/drun.css"
+
+if [[ ! $(pidof wofi) ]]; then
+    wofi -show drun --no-actions --conf="${CONFIG}" --style="${STYLE}"
+else
+    pkill wofi
+fi
