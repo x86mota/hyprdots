@@ -1,0 +1,2 @@
+# hyprdots
+Hyprland configuration files
