@@ -1,11 +1,11 @@
-<div style="display: flex; align-items: center;">
-  <img src="./img/hyprland.png" width="200" />
-  <span style="font-size: 16px; padding-left: 20px; display: block; width: 100%;">
-    This repository contains personalized configurations for Hyprland, along with scripts created to optimize and automate various tasks in the workspace.
+<section style="display: flex; justify-content: flex-start;">
+  <img src="./img/hyprland.png" align="left" width="100" />
+  <div>
+    <p>This repository contains personalized configurations for Hyprland, along with scripts created to optimize and automate various tasks in the workspace.
     <br>
-    The configurations include adjustments to the compositor's behavior, keyboard shortcuts, and application integrations.
-  </span>
-</div>
+    The configurations include adjustments to the compositor's behavior, keyboard shortcuts, and application integrations.</p>
+  </div>
+</section>
 
 <br>
 
