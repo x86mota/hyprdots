@@ -1,6 +1,13 @@
-# hyprdots
-This repository contains personalized configurations for Hyprland, along with scripts created to optimize and automate various tasks in the workspace. 
-The configurations include adjustments to the compositor's behavior, keyboard shortcuts and application integrations
+<div style="display: flex; align-items: center;">
+  <img src="./img/hyprland.png" width="200" />
+  <span style="font-size: 16px; padding-left: 20px; display: block; width: 100%;">
+    This repository contains personalized configurations for Hyprland, along with scripts created to optimize and automate various tasks in the workspace.
+    <br>
+    The configurations include adjustments to the compositor's behavior, keyboard shortcuts, and application integrations.
+  </span>
+</div>
+
+<br>
 
 ## Keybindings
 | Keys                                                                                              | Action                    |
@@ -18,6 +25,8 @@ The configurations include adjustments to the compositor's behavior, keyboard sh
 | <kbd>Super</kbd>  +   <kbd>Shift</kbd>    +   <kbd>←</kbd><kbd>↑</kbd><kbd>→</kbd><kbd>↓</kbd>    | Change Window             |
 | <kbd>Super</kbd>  +   <kbd>Shift</kbd>    +   <kbd>[0-9]</kbd>                                    | Move to Workspaces        |
 | <kbd>Super</kbd>  +   <kbd>[0-9]</kbd>                                                            | Switch workspaces         |
+
+<br>
 
 ## Custom Scripts
 | Keys                                                                                              | Action                    |
