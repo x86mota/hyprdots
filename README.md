@@ -34,8 +34,8 @@
 | <kbd>Super</kbd>  +   <kbd>Space</kbd>                                                            | Application Launcher      |
 | <kbd>Super</kbd>  +   <kbd>CTRL</kbd> +   <kbd>F4</kbd>                                           | Power menu                |
 | <kbd>Super</kbd>  +   <kbd>CTRL</kbd> +   <kbd>B</kbd>                                            | Launch/Restart Waybar     |
-| <kbd>SUper</kbd>  +   <kbd>CTRL</kbd> +   <kbd>W</kbd>                                            | Launch/Restart swww       |
-| <kbd>SUper</kbd>  +   <kbd>CTRL</kbd> +   <kbd>K</kbd>                                            | Switch keyboard layout    |
+| <kbd>Super</kbd>  +   <kbd>CTRL</kbd> +   <kbd>W</kbd>                                            | Launch/Restart swww       |
+| <kbd>Super</kbd>  +   <kbd>CTRL</kbd> +   <kbd>K</kbd>                                            | Switch keyboard layout    |
 
 <br>
 
