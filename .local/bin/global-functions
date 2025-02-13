@@ -9,12 +9,11 @@ function _endProcess {
 }
 
 function _Confirm {
-    CONFIRM_CONFIG="${HOME}/.config/wofi/confirm/confirm.conf"
-    CONFIRM_STYLE="${HOME}/.config/wofi/confirm/confirm.css"
-    cancel="Cancel"
-    confirm="Confirm"
+    local path="${HOME}/.config/wofi/confirm"
+    local conf="${path}/settings.conf"
+    local style="${path}/style.css"
 
-    response="$(echo -e "${cancel}\n${confirm}" | wofi --conf="${CONFIRM_CONFIG}" --style="${CONFIRM_STYLE}")"
+    response="$(echo -e "Cancel\nConfirm" | wofi --conf="${conf}" --style="${style}")"
 
     case "${response}" in
         "Cancel")

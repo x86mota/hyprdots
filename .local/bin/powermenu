@@ -2,26 +2,27 @@
 
 source global-functions
 
-CONFIG="${HOME}/.config/wofi/powermenu/powermenu.conf"
-STYLE="${HOME}/.config/wofi/powermenu/powermenu.css"
+path="${HOME}/.config/wofi/powermenu"
+conf="${path}/settings.conf"
+style="${path}/style.css"
 lock=""
 logout=""
 reboot=""
 shutdown="⏻"
 options="${lock}\n${logout}\n${reboot}\n${shutdown}"
-choice="$(echo -e "${options}" | wofi --conf="${CONFIG}" --style="${STYLE}")"
+choice="$(echo -e "${options}" | wofi --conf="${conf}" --style="${style}")"
 
 case "${choice}" in
-    "")
+    "${lock}")
         hyprlock
         ;;
-    "")
+    "${logout}")
         _Confirm && hyprctl dispatch exit
         ;;
-    "")
+    "${reboot}")
         _Confirm && systemctl reboot
         ;;
-    "⏻")
+    "${shutdown}")
         _Confirm && systemctl poweroff
         ;;
     *)
