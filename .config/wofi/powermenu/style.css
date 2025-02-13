@@ -1,0 +1,41 @@
+* {
+    font-family: monospace;
+    border-radius: 0px;
+}
+
+#outer-box {
+    border: 2px solid @wm_bg;
+    padding: 5px;
+}
+
+#inner-box {
+    margin: 0px;
+    padding: 0px;
+}
+
+#input {
+    margin: -1000px;
+}
+
+#entry {
+    min-width: 150px;
+    min-height: 150px;
+    font-size: 5rem;
+    margin: 5px;
+    color: @theme_fg_color;
+    background-color: @wm_bg;
+    padding-right: 20px;
+}
+
+#entry:selected {
+    background-color: @theme_selected_bg_color;
+}
+
+#entry:selected * {
+    color: @theme_bg_color;
+    background-color: transparent;
+}
+
+#entry:drop(active) {
+    background-color: @theme_selected_bg_color!important;
+}
