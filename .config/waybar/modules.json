@@ -14,6 +14,10 @@
             "*": 5
         }
     },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 14
+    },
     "clock": {
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
