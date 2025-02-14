@@ -1,0 +1,35 @@
+* {
+    font-size: 0.80rem;
+    border-radius: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border: none;
+}
+
+#workspaces,
+#clock {
+    margin: 0.2rem;
+    border-radius: 5px;
+    border-style: solid;
+    background-color: shade(@theme_base_color, 1);
+}
+
+#workspaces button {
+    margin: 0rem 0.2rem;
+    padding: 0px;
+}
+
+#workspaces button:hover {
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+#workspaces button.active {
+    background-color: transparent;
+    color: @theme_selected_bg_color;
+}
+
+#clock {
+    padding: 0rem 0.4rem;
+    color: @theme_selected_bg_color;
+}
