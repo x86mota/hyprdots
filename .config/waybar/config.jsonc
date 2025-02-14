@@ -1,0 +1,19 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mode": "dock",
+    "margin": 0,
+    "reload_style_on_change": true,
+    "include": [
+        "~/.config/waybar/modules.json"
+    ],
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"  
+    ],
+    "modules-right": [
+
+    ]
+}
