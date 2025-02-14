@@ -10,5 +10,28 @@
         "persistent-workspaces": {
             "*": 5
         }
+    },
+    "clock": {
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#2eb398'><b>{}</b></span>",
+                "today": "<span color='#2eb398'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        },
+        "format": " {:%a %d %b    %I:%M %p}",
+        "format-alt": "  {:%d/%m/%Y    %H:%M:%S}",
+        "interval": 1
     }
 }
