@@ -9,6 +9,16 @@
 
 <br>
 
+## Preview
+
+![SwayNC](img/swaync.png)
+
+<br>
+
+![Wofi](img/wofi.png)
+
+<br>
+
 ## Keybindings
 | Keys                                                                                              | Action                    |
 | :---                                                                                              | :---                      |
