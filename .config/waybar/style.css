@@ -21,7 +21,9 @@ tooltip {
 #taskbar,
 #clock,
 #custom-notification,
-#network {
+#tray,
+#network,
+#audio {
     margin:  0.2rem 0rem;
     border-radius: 2px;
     border-style: solid;
@@ -42,7 +44,8 @@ tooltip {
     color: @wm_bg;
 }
 
-#workspaces button:hover {
+#workspaces button:hover,
+#taskbar button {
     background-color: transparent;
 }
 
@@ -60,6 +63,16 @@ tooltip {
     color: @wm_icon_unfocused_bg;
     padding-left: 0.3rem;
     padding-right: 0.5rem
+}
+
+#tray {
+    padding: 0rem 0.3rem;
+}
+
+#pulseaudio.output,
+#pulseaudio.input {
+    padding: 0rem 0.3rem;
+    color: @BLUEBERRY_300;
 }
 
 #network {

@@ -61,6 +61,42 @@
         "on-click": "swaync-client -t -sw",
         "escape": true
     },
+    "tray": {
+        "show-passive-items": true,
+        "spacing": 0,
+        "reverse-direction": true
+    },
+    "pulseaudio#output": {
+        "format": "{icon}{volume: >3}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                ""
+            ],
+            "headphone": "",
+            "headset": "",
+            "speaker": "󰓃",
+            "alsa_output.pci-0000_07_00.4.analog-stereo": "󰓃 "
+        },
+        "on-click": "pavucontrol -t 3",
+        "tooltip-format": "{desc}"
+    },
+    "pulseaudio#input": {
+        "format": "{format_source}",
+        "format-source": "{volume: >3}%",
+        "format-source-muted": " {volume: >3}%",
+        "on-click": "pavucontrol -t 4",
+        "tooltip-format": "{source_desc}"
+    },
+    "group/audio": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio#output",
+            "pulseaudio#input"
+        ]
+    },
     "network": {
         "format": "{ifname}",
         "format-wifi": " {essid} ({signalStrength}%)",

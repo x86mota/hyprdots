@@ -18,6 +18,8 @@
         "custom/notification"
     ],
     "modules-right": [
+        "tray",
+        "group/audio",
         "network"
     ]
 }
