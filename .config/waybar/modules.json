@@ -37,8 +37,8 @@
             "on-scroll-up": "shift_up",
             "on-scroll-down": "shift_down"
         },
-        "format": " {:%a %d %b    %I:%M %p}",
-        "format-alt": "  {:%d/%m/%Y    %H:%M:%S}",
+        "format": " {:%a %d %b  %I:%M %p}",
+        "format-alt": "  {:%d/%m/%Y  %H:%M:%S}",
         "interval": 1
     },
     "custom/notification": {
