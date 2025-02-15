@@ -14,13 +14,13 @@
         "wlr/taskbar"
     ],
     "modules-center": [
-        "clock",
-        "custom/notification"
+        "clock"
     ],
     "modules-right": [
         "tray",
         "hyprland/language",
         "group/audio",
-        "network"
+        "network",
+        "custom/notification"
     ]
 }

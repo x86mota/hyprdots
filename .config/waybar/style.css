@@ -62,8 +62,9 @@ tooltip {
 
 #custom-notification {
     color: @wm_icon_unfocused_bg;
-    padding-left: 0.3rem;
-    padding-right: 0.5rem
+    padding-left: 0.4rem;
+    padding-right: 0.5rem;
+    margin-right: 0.2rem;
 }
 
 #language {
@@ -83,6 +84,5 @@ tooltip {
 
 #network {
     padding: 0rem 0.3rem;
-    margin-right: 0.2rem;
     color: @LIME_700;
 }
