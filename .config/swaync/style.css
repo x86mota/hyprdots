@@ -1,65 +1,32 @@
+/* Animação simulada para abrir da direita */
+@keyframes fadeIn {
+    0% {
+        margin-left: 300px;
+        margin-right: -300;
+    }
+
+    100% {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
 * {
-    font-weight: bolder;
-    border-radius: 0px;
+    font-family: JetBrainsMono Nerd Font Mono;
+    font-weight: normal;
+    border-radius: 5px;
+    outline: none;
 }
 
 .control-center {
-    color: @theme_fg_color;
-    background: @theme_bg_color;
-    border: 1px solid @borders;
+    background: alpha(@theme_bg_color, .5);
 }
 
-.widget-title {
-    font-size: 1rem;
-    color: @theme_fg_color;
-    padding: 5px 10px;
-    margin: 15px 15px 10px 15px;
-}
-
-.widget-title button {
-    font-size: 0.80rem;
-    color: @theme_fg_color;
-    background: transparent;
-    border: 1px solid @borders;
-}
-
-.widget-title button:hover {
-    color: @theme_bg_color;
-    background: @theme_selected_bg_color;
-}
-
-.widget-dnd {
-    padding: 5px 10px;
-    margin: 15px 15px 10px 15px;
-}
-
-.widget-dnd label {
-    font-size: 0.80rem;
-    color: @theme_fg_color;
-}
-
-.widget-dnd>switch {
-    color: @theme_fg_color;
-    background: transparent;
-    border: 1px solid @borders;
-}
-
-.widget-dnd>switch slider {
-    background: @theme_bg_color;
-    border: 1px solid @borders;
-}
-
-.widget-dnd>switch:checked {
-    background: @theme_selected_bg_color;
-}
-
-.widget-dnd>switch:checked * {
-    color: @theme_bg_color;
-}
-
+/* Notification */
 .notification {
-    background-color: @theme_bg_color;
-    border: 1px solid @borders;
+    animation: fadeIn .5s ease-in-out;
+    background-color: alpha(@theme_bg_color, .5);
+    border: 0.5px solid @wm_bg
 }
 
 .notification-background {
@@ -67,106 +34,179 @@
 }
 
 .notification-content {
-    color: @theme_fg_color;
-    background: @theme_base_color;
-    border: 1px solid @borders;
-    padding: 5px;
+    background-color: alpha(@theme_bg_color, .5);
+    padding: 0.5rem;
 }
 
 .notification-default-action:hover {
-    background-color: @theme_bg_color;
+    background-color: @wm_bg;
 }
 
 .notification-action:hover {
-    background-color: @theme_bg_color;
+    background-color: @wm_bg;
 }
 
 .summary {
-    font-size: 1rem;
-    color: @theme_fg_color;
-    padding: 5px;
-    border: none;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: @theme_selected_bg_color;
+    padding: 0.2rem;
 }
 
 .body {
     font-size: 0.70rem;
     color: @theme_fg_color;
-    margin-top: 5px;
-    border: none;
-    padding: 5px;
+    margin-top: 0.1rem;
+    padding: 0.2rem;
 }
 
 .time {
     font-size: 0.60rem;
     color: @theme_fg_color;
-    padding: 5px;
-    margin-right: 40px;
+    padding: 0.2rem;
+}
+
+.close-button * {
+    color: @theme_fg_color;
 }
 
 .close-button {
+    border: 0.5px solid @theme_bg_color;
+    background-color: @wm_button_close_bg;
     min-width: 0.50rem;
     min-height: 0.50rem;
-    color: @theme_fg_color;
-    background: @theme_base_color;
-    border: 1px solid @borders;
-    margin-top: 5px;
-    margin-right: 5px;
+    margin: 0.2rem;
 }
 
 .close-button:hover {
-    color: @theme_bg_color;
-    background: @theme_selected_bg_color;
-    transition: all .15s ease-in-out;
+    background-color: @wm_button_close_hover_bg;
 }
 
 .notification-group-icon {
-    color: @theme_fg_color;
-    padding: 5px;
+    color: @theme_selected_bg_color;
+    padding: 0.2rem;
+    margin: 0.2rem;
 }
 
 .notification-group-header {
-    color: @theme_fg_color;
-    padding: 5px;
+    font-size: 1.5rem;
+    color: @theme_selected_bg_color;
+    padding: 0.2rem;
+    margin: 0.2rem;
+}
+
+.notification-group-buttons button * {
+    color: @theme_selected_bg_color;
 }
 
 .notification-group-buttons button {
-    color: @theme_fg_color;
-    background-color: @theme_base_color;
+    background-color: alpha(@theme_bg_color, .5);
+    padding: 0.1rem;
+    min-width: 1.5rem;
+    min-height: 1.5rem;
 }
 
 .notification-group-buttons button:hover {
-    color: @theme_bg_color;
-    background-color: @theme_selected_bg_color;
-    transition: all .15s ease-in-out;
+    background-color: @wm_bg;
 }
 
-.widget-mpris {
+/* Tittle */
+.widget-title {
+    margin: 1rem;
+}
+
+.widget-title label {
+    font-size: 0.90rem;
+    padding: 0rem 0.5rem;
     color: @theme_fg_color;
-    background: @theme_bg_color;
-    padding: 5px 10px;
-    margin: 10px 10px 5px 10px;
-    border-radius: 5px;
 }
 
-.widget-mpris>box>button {
-    border-radius: 5px;
+.widget-title button {
+    background: transparent;
+    padding: 0.1rem 0.5rem;
+    border: 0.5px solid @wm_bg
+}
+
+.widget-title button label {
+    font-size: 0.80rem;
+    padding: 0rem;
+    margin: 0rem;
+}
+
+.widget-title button:hover {
+    color: @theme_bg_color;
+    background: @theme_selected_bg_color;
+}
+
+.widget-title button:hover label {
+    color: @theme_bg_color;
+}
+
+/* DND */
+.widget-dnd {
+    margin: 1rem;
+}
+
+.widget-dnd label {
+    font-size: 0.75rem;
+    padding: 0rem 0.5rem;
+    color: @theme_fg_color;
+}
+
+.widget-dnd>switch * {
+    min-width: 0.50rem;
+    min-height: 0.50rem;
+    color: @theme_fg_color;
+}
+
+.widget-dnd>switch {
+    background-color: transparent;
+    background-color: @theme_selected_bg_color;
+    border: 0.5px solid @wm_bg
+}
+
+.widget-dnd>switch slider {
+    background: @wm_bg;
+    padding: 0rem;
+    margin: 0rem;
+}
+
+.widget-dnd>switch:checked {
+    background: @wm_button_close_bg;
+}
+
+.widget-dnd>switch:checked * {
+    color: @theme_bg_color;
+}
+
+/* mpris */
+.widget-mpris {
+    margin: 1rem 0.2rem 0rem 0.2rem;
 }
 
 .widget-mpris-player {
-    padding: 5px 10px;
-    margin: 10px
-}
-
-.widget-mpris-player button:hover {
-    background: @theme_selected_bg_color;
-    color: @theme_fg_color;
+    margin: 1rem;
 }
 
 .widget-mpris-title {
-    font-weight: 700;
-    font-size: 1.25rem
+    color: @theme_selected_bg_color;
+    font-size: 0.90rem;
+    font-weight: bold;
 }
 
 .widget-mpris-subtitle {
-    font-size: 1.1rem
+    color: @theme_fg_color;
+    font-size: 0.75rem;
+    font-weight: normal;
+}
+
+.widget-mpris-player button * {
+    border: none;
+    background-color: transparent;
+    color: @theme_selected_bg_color;
+}
+
+.widget-mpris-player button:hover {
+    border: 0.2px solid @wm_bg;
+    background: alpha(@theme_bg_color, .7);
 }
