@@ -3,6 +3,7 @@
     "position": "top",
     "mode": "dock",
     "margin": 0,
+    "spacing": 7,
     "reload_style_on_change": true,
     "include": [
         "~/.config/waybar/modules.json"
@@ -13,7 +14,8 @@
         "wlr/taskbar"
     ],
     "modules-center": [
-        "clock"  
+        "clock",
+        "custom/notification"
     ],
     "modules-right": [
 

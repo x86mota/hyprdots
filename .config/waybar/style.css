@@ -9,9 +9,10 @@
 #custom-logo,
 #workspaces,
 #taskbar,
-#clock {
-    margin: 0.2rem;
-    border-radius: 5px;
+#clock,
+#custom-notification {
+    margin:  0.2rem 0rem;
+    border-radius: 2px;
     border-style: solid;
     background-color: shade(@theme_base_color, 1);
 }
@@ -19,17 +20,18 @@
 #custom-logo {
     font-size: 1rem;
     color: aqua;
-    padding-left: 0.2rem;
-    padding-right: 0.4rem;
+    padding-left: 0.3rem;
+    padding-right: 0.5rem;
+    margin-left: 0.2rem;
 }
 
 #workspaces button {
     margin: 0rem 0.2rem;
     padding: 0px;
+    color: @wm_bg;
 }
 
 #workspaces button:hover {
-    border-radius: 5px;
     background-color: transparent;
 }
 
@@ -41,4 +43,10 @@
 #clock {
     padding: 0rem 0.4rem;
     color: @theme_selected_bg_color;
+}
+
+#custom-notification {
+    color: @wm_icon_unfocused_bg;
+    padding-left: 0.3rem;
+    padding-right: 0.5rem
 }
