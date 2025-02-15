@@ -6,11 +6,22 @@
     border: none;
 }
 
+window#waybar {
+    background: @theme_bg_color;
+    color: @theme_fg_color;
+    border: none;
+}
+
+tooltip {
+    background: @theme_bg_color;
+}
+
 #custom-logo,
 #workspaces,
 #taskbar,
 #clock,
-#custom-notification {
+#custom-notification,
+#network {
     margin:  0.2rem 0rem;
     border-radius: 2px;
     border-style: solid;
@@ -49,4 +60,10 @@
     color: @wm_icon_unfocused_bg;
     padding-left: 0.3rem;
     padding-right: 0.5rem
+}
+
+#network {
+    padding: 0rem 0.3rem;
+    margin-right: 0.2rem;
+    color: @LIME_700;
 }

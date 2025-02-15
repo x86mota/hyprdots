@@ -18,6 +18,6 @@
         "custom/notification"
     ],
     "modules-right": [
-
+        "network"
     ]
 }
