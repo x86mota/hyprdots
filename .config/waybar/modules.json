@@ -70,7 +70,7 @@
         "format": "{short}"
     },
     "pulseaudio#output": {
-        "format": "{icon}{volume: >3}%",
+        "format": "{volume: >3}% {icon}",
         "format-muted": "",
         "format-icons": {
             "default": [
@@ -87,9 +87,9 @@
         "tooltip-format": "{desc}"
     },
     "pulseaudio#input": {
-        "format": "{format_source}{volume: >3}%",
-        "format-source": "",
-        "format-source-muted": "",
+        "format": "{format_source}",
+        "format-source": "{volume: >3}% ",
+        "format-source-muted": "{volume: >3}%  ",
         "on-click": "pavucontrol -t 4",
         "tooltip-format": "{source_desc}"
     },
