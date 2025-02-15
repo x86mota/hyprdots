@@ -160,7 +160,6 @@
 }
 
 .widget-dnd>switch {
-    background-color: transparent;
     background-color: @theme_selected_bg_color;
     border: 0.5px solid @wm_bg
 }
