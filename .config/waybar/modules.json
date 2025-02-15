@@ -66,6 +66,9 @@
         "spacing": 0,
         "reverse-direction": true
     },
+    "hyprland/language": {
+        "format": "{short}"
+    },
     "pulseaudio#output": {
         "format": "{icon}{volume: >3}%",
         "format-muted": "",

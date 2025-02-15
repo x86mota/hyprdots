@@ -19,6 +19,7 @@
     ],
     "modules-right": [
         "tray",
+        "hyprland/language",
         "group/audio",
         "network"
     ]

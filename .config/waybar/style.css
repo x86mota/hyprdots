@@ -21,6 +21,7 @@ tooltip {
 #taskbar,
 #clock,
 #custom-notification,
+#language,
 #tray,
 #network,
 #audio {
@@ -63,6 +64,11 @@ tooltip {
     color: @wm_icon_unfocused_bg;
     padding-left: 0.3rem;
     padding-right: 0.5rem
+}
+
+#language {
+    padding: 0rem 0.3rem;
+    color: @STRAWBERRY_100;
 }
 
 #tray {
