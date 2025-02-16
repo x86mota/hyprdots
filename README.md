@@ -11,11 +11,11 @@
 
 ## Preview
 
-![SwayNC](img/swaync.png)
+![Waybar](img/Waybar.png)
 
-<br>
+![SwayNC](img/SwayNC.png)
 
-![Wofi](img/wofi.png)
+![Wofi](img/Wofi.png)
 
 <br>
 
