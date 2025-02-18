@@ -39,7 +39,7 @@ return {
     }
 
     dashboard.section.header.opts.position = "center"
-    dashboard.section.header.opts.hl = "String"
+    dashboard.section.header.opts.hl = "LineNr"
 
     dashboard.section.buttons.val = {
 
