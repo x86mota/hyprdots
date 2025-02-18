@@ -48,21 +48,23 @@ return {
     alpha.setup(dashboard.opts)
 
     vim.api.nvim_create_autocmd("User", {
-      pattern = "AlphaReady",
-      callback = function()
-        vim.opt.laststatus = 0
-        vim.opt.showtabline = 0
-      end,
+        pattern = "AlphaReady",
+        callback = function()
+            vim.opt.ruler = false
+            vim.opt.laststatus = 0
+            vim.opt.showtabline = 0
+        end,
     })
     
     vim.api.nvim_create_autocmd("BufEnter", {
-      pattern = "*",
-      callback = function()
-        if vim.bo.filetype ~= "alpha" then
-          vim.opt.laststatus = 2
-          vim.opt.showtabline = 2
-        end
-      end,
+        pattern = "*",
+        callback = function()
+            if vim.bo.filetype ~= "alpha" then
+                vim.opt.ruler = true
+                vim.opt.laststatus = 2
+                vim.opt.showtabline = 2
+            end
+        end,
     })
     
   end,
