@@ -3,6 +3,7 @@ vim.cmd('let g:netrw_liststyle = 3')
 local opt = vim.opt
 
 -- {{{ Global
+vim.opt.termguicolors = true
 opt.errorbells = false
 opt.title = false
 opt.encoding = 'utf-8'
