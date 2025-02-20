@@ -51,5 +51,5 @@ return {
         hl( 0,  'Operator',         { fg = '#7AA2F7',   bg = 'NONE',    bold = false    }),
         hl( 0,  'Delimiter',        { fg = '#7AA2F7',   bg = 'NONE',    bold = false    }),
         hl( 0,  'Type',             { fg = '#2EB398',   bg = 'NONE',    bold = false    }),
-        hl( 0,  '@variable',        { fg = '#CCD7D4',   bg = 'NONE',    bold = false    }),       
+        hl( 0,  '@variable',        { fg = '#CCD7D4',   bg = 'NONE',    bold = false    }),
 }
