@@ -17,16 +17,15 @@ return {
             },
             renderer = {
                 indent_markers = {
-                    enable = true
-                },
-                icons = {
-                    glyphs = {
-                        folder = {
-                            arrow_open = '',
-                            arrow_closed = "" 
-                        }
+                    enable = true,
+                    icons = {
+                        corner = '｜',
+                        edge = '｜',
+                        item = '｜',
+                        bottom = '｜',
+                        none = ' '
                     }
-                }
+                },
             },
             actions = {
                 open_file = {
