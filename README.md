@@ -1,11 +1,17 @@
-<section style="display: flex; justify-content: flex-start;">
-  <img src="./img/hyprland.png" align="left" width="100" />
-  <div>
-    <p>This repository contains personalized configurations for Hyprland, along with scripts created to optimize and automate various tasks in the workspace.
-    <br>
-    The configurations include adjustments to the compositor's behavior, keyboard shortcuts, and application integrations.</p>
-  </div>
+<section style="display: flex; justify-content: flex-start; align-items: center;">
+    <h1>
+        <a href="https://www.dio.me/">
+            <img src="./img/hyprland.png" align="left" width="50" >
+        </a>
+        <span>
+            Hyprland dotfiles</h1>
+        </span>
+    </h1>
 </section>
+
+This repository contains personalized configurations for Hyprland, along with scripts created to optimize and automate various tasks in the workspace.  
+The configurations include adjustments to the compositor's behavior, keyboard shortcuts, and application integrations.
+
 
 <br>
 
