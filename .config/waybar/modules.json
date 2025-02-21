@@ -63,7 +63,7 @@
     },
     "tray": {
         "show-passive-items": true,
-        "spacing": 0,
+        "spacing": 5,
         "reverse-direction": true
     },
     "hyprland/language": {
