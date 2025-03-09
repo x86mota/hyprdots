@@ -41,12 +41,6 @@ The configurations include adjustments to the compositor's behavior, keyboard sh
 | <kbd>Super</kbd>  +   <kbd>Shift</kbd>    +   <kbd>←</kbd><kbd>↑</kbd><kbd>→</kbd><kbd>↓</kbd>    | Change Window             |
 | <kbd>Super</kbd>  +   <kbd>Shift</kbd>    +   <kbd>[0-9]</kbd>                                    | Move to Workspaces        |
 | <kbd>Super</kbd>  +   <kbd>[0-9]</kbd>                                                            | Switch workspaces         |
-
-<br>
-
-## Custom Scripts
-| Keys                                                                                              | Action                    |
-| :---                                                                                              | :---                      |
 | <kbd>Super</kbd>  +   <kbd>Space</kbd>                                                            | Application Launcher      |
 | <kbd>Super</kbd>  +   <kbd>CTRL</kbd> +   <kbd>F4</kbd>                                           | Power menu                |
 | <kbd>Super</kbd>  +   <kbd>CTRL</kbd> +   <kbd>B</kbd>                                            | Launch/Restart Waybar     |
