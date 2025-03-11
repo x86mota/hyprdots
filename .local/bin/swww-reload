@@ -2,9 +2,9 @@
 
 source global-functions
 
-if pgrep -f "swww.sh"; then
-    _endProcess "swww.sh"
+if pgrep -f "swww-launcher"; then
+    _endProcess "swww-launcher"
     _endProcess "sleep"
 fi
 
-swww.sh
+swww-launcher
