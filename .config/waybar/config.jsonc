@@ -2,8 +2,8 @@
     "layer": "top",
     "position": "top",
     "mode": "dock",
-    "margin": 0,
-    "spacing": 7,
+    "margin": 3,
+    "spacing": 5,
     "reload_style_on_change": true,
     "include": [
         "~/.config/waybar/modules.json"
@@ -18,7 +18,6 @@
     ],
     "modules-right": [
         "tray",
-        "hyprland/language",
         "group/audio",
         "network",
         "custom/notification"
