@@ -27,6 +27,7 @@ function _SetWallpaper {
 
     if [ "${#files[@]}" -eq 1 ]; then
         swww img "${files[0]}" --transition-type none
+        _SetHyprlockBG
     else
         local timeout=900
         local wallpaper=""
