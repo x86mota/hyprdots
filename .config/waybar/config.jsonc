@@ -10,16 +10,16 @@
     ],
     "modules-left": [
         "custom/logo",
-        "hyprland/workspaces",
         "wlr/taskbar"
     ],
     "modules-center": [
-        "clock"
+        "hyprland/workspaces"
     ],
     "modules-right": [
         "tray",
         "group/audio",
         "network",
+        "clock",
         "custom/notification"
     ]
 }

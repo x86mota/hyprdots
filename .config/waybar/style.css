@@ -1,6 +1,7 @@
 * {
     font-size: 0.85rem;
-    border-radius: 0px;
+    font-weight: 600;
+    border-radius: 0.3rem;
     padding-top: 0px;
     padding-bottom: 0px;
     border: none;
@@ -16,21 +17,6 @@ tooltip {
     background: @theme_bg_color;
 }
 
-#custom-logo,
-#workspaces,
-#taskbar,
-#clock,
-#custom-notification,
-#language,
-#tray,
-#network,
-#audio {
-    margin:  0.2rem 0rem;
-    border-radius: 2px;
-    border-style: solid;
-    background-color: shade(@theme_base_color, 1);
-}
-
 #custom-logo {
     font-size: 1rem;
     color: aqua;
@@ -42,7 +28,7 @@ tooltip {
 #workspaces button {
     margin: 0rem 0.2rem;
     padding: 0px;
-    color: @wm_bg;
+    color: @theme_selected_bg_color;
 }
 
 #workspaces button:hover,
@@ -51,8 +37,8 @@ tooltip {
 }
 
 #workspaces button.active {
-    background-color: transparent;
-    color: @theme_selected_bg_color;
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
 }
 
 #taskbar button {
