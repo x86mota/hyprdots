@@ -8,15 +8,13 @@
 }
 
 window#waybar {
-    background: @theme_bg_color;
+    background: alpha(@theme_bg_color, .5);
     color: @theme_fg_color;
     border: none;
-    opacity: 0.9;
 }
 
 tooltip {
-    background: @theme_bg_color;
-    opacity: 0.9;
+    background: alpha(@theme_bg_color, .5);
 }
 
 #custom-logo {
