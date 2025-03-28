@@ -11,10 +11,12 @@ window#waybar {
     background: @theme_bg_color;
     color: @theme_fg_color;
     border: none;
+    opacity: 0.9;
 }
 
 tooltip {
     background: @theme_bg_color;
+    opacity: 0.9;
 }
 
 #custom-logo {
