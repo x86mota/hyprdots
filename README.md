@@ -17,11 +17,7 @@ The configurations include adjustments to the compositor's behavior, keyboard sh
 
 ## Preview
 
-![Waybar](img/Waybar.png)
-
-![SwayNC](img/SwayNC.png)
-
-![Wofi](img/Wofi.png)
+![Preview](img/preview.png)
 
 <br>
 
