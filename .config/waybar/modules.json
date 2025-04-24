@@ -2,17 +2,25 @@
     "custom/logo": {
         "format": ""
     },
-    "hyprland/workspaces": {
-        "active-only": false,
-        "all-outputs": true,
-        "format": "{name}",
-        "persistent-workspaces": {
-            "*": 5
-        }
-    },
-    "wlr/taskbar": {
+    "custom/notification": {
+        "tooltip": false,
+        "justify": "center",
         "format": "{icon}",
-        "icon-size": 18
+        "format-icons": {
+            "notification": "<span foreground='#F27835'>󰂚</span>",
+            "none": "󰂚",
+            "dnd-notification": "<span foreground='#F27835'>󰂛</span>",
+            "dnd-none": "󰂛",
+            "inhibited-notification": "<span foreground='#F27835'>󰂚</span>",
+            "inhibited-none": "󰂚",
+            "dnd-inhibited-notification": "<span foreground='#F27835'>󰂛</span>",
+            "dnd-inhibited-none": "󰂛"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "escape": true
     },
     "clock": {
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
@@ -36,37 +44,27 @@
         "format": " {:%H:%M}",
         "interval": 1
     },
-    "custom/notification": {
-        "tooltip": false,
-        "justify": "center",
-        "format": "{icon}",
-        "format-icons": {
-            "notification": "<span foreground='#F27835'>󰂚</span>",
-            "none": "󰂚",
-            "dnd-notification": "<span foreground='#F27835'>󰂛</span>",
-            "dnd-none": "󰂛",
-            "inhibited-notification": "<span foreground='#F27835'>󰂚</span>",
-            "inhibited-none": "󰂚",
-            "dnd-inhibited-notification": "<span foreground='#F27835'>󰂛</span>",
-            "dnd-inhibited-none": "󰂛"
-        },
-        "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click": "swaync-client -t -sw",
-        "escape": true
-    },
-    "tray": {
-        "show-passive-items": true,
-        "spacing": 5,
-        "reverse-direction": true
-    },
     "hyprland/language": {
         "format": "{short}"
     },
+    "hyprland/workspaces": {
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{name}",
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+    "pulseaudio#input": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": " {volume}%",
+        "on-click": "pavucontrol -t 4",
+        "tooltip-format": "{source_desc}"
+    },
     "pulseaudio#output": {
-        "format": "{icon} {volume: >3}%",
-        "format-muted": "",
+        "format": "{icon} {volume}%",
+        "format-muted": "",
         "format-icons": {
             "default": [
                 "",
@@ -81,13 +79,6 @@
         "on-click": "pavucontrol -t 3",
         "tooltip-format": "{desc}"
     },
-    "pulseaudio#input": {
-        "format": "{format_source}",
-        "format-source": " {volume: >3}%",
-        "format-source-muted": " {volume: >3}%",
-        "on-click": "pavucontrol -t 4",
-        "tooltip-format": "{source_desc}"
-    },
     "group/audio": {
         "orientation": "horizontal",
         "modules": [
@@ -95,16 +86,13 @@
             "pulseaudio#input"
         ]
     },
-    "network": {
-        "format": "{ifname}",
-        "format-wifi": " {essid} ({signalStrength}%)",
-        "format-ethernet": " {ifname}",
-        "format-disconnected": "",
-        "tooltip-format": " {ifname} via {gwaddri}",
-        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUpload: {bandwidthUpBits}\nDownload: {bandwidthDownBits}",
-        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\nUpload: {bandwidthUpBits}\nDownload: {bandwidthDownBits}",
-        "tooltip-format-disconnected": " Disconnected",
-        "max-length": 50,
-        "on-click": "nm-connection-editor"
+    "tray": {
+        "show-passive-items": true,
+        "spacing": 5,
+        "reverse-direction": true
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 16
     }
 }

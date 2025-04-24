@@ -3,7 +3,7 @@
     "position": "top",
     "mode": "dock",
     "margin": 3,
-    "spacing": 5,
+    "spacing": 8,
     "reload_style_on_change": true,
     "include": [
         "~/.config/waybar/modules.json"
@@ -18,8 +18,7 @@
     "modules-right": [
         "tray",
         "group/audio",
-        "network",
         "clock",
         "custom/notification"
-    ]
+    ],
 }
