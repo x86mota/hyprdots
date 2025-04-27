@@ -14,7 +14,7 @@ window#waybar {
 }
 
 tooltip {
-    background: alpha(@theme_bg_color, .5);
+    background: alpha(@theme_bg_color, .9);
 }
 
 #custom-logo {
