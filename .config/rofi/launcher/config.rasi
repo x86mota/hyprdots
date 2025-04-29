@@ -13,9 +13,9 @@ configuration {
 @import "../colors/matcha-dark-sea.rasi"
 
 * {
+    text-color: @foreground;
     font: "JetBrainsMono Nerd Font 11";
     background-color: transparent;
-    border-radius: 5px;
 }
 
 /*****----- Main Window -----*****/
@@ -24,8 +24,6 @@ window {
   location: center;
   anchor: center;
   fullscreen: true;
-  padding: 10%;
-  background-color: @tbackground;
   border: none;
 }
 
@@ -33,10 +31,9 @@ window {
 mainbox {
     spacing: 10%;
     margin: 0px;
-    padding: 5%;
+    padding: 15%;
     border: none;
-    border-radius: 50px;
-    background-color: @background;
+    background-color: @tbackground;
     orientation:vertical;
     children: [ "inputbar", "listview" ];
 }
@@ -117,16 +114,19 @@ element.normal.active {
 element.selected.normal {
   background-color: @tselected;
   text-color: @foreground;
+  border-radius: 15px;
 }
 
 element.selected.urgent {
   background-color: @tselected;
   text-color: @foreground;
+  border-radius: 15px;
 }
 
 element.selected.active {
   background-color: @tselected;
   text-color: @foreground;
+  border-radius: 15px;
 }
 
 element.alternate.normal {
