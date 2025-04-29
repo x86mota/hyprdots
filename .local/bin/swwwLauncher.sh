@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+function _endProcess {
+    local process="$1"
+
+    pgrep -f "${process}" | while read -r pid; do
+        kill "${pid}"
+    done
+}
+
 function _VerifyDirectory {
     local WallpapersDir="${HOME}/.config/wallpapers"
     local SupportedExtentions=("jpeg" "jpg" "png" "gif" "pnm" "tga" "tiff" "webp" "bmp" "farbfeld")
@@ -54,6 +62,11 @@ function _SetHyprlockBG {
         sed -i "/background/,/}/s|^\(.*path =\).*|\1 $image|" "$hyprlock_path"
     fi
 }
+
+if pgrep -f "swww-launcher"; then
+    _endProcess "swww-launcher"
+    _endProcess "sleep"
+fi
 
 if ! pacman -Qs swww >/dev/null 2>&1; then
     notify-send "Package swww is not installed." 
