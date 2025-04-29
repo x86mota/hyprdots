@@ -1,8 +1,9 @@
 * {
-    background:  #1b2224;
-    tbackground:  #1b222407;
-    foreground: #ccd7d4;
-    tforeground: #ccd7d420;
-    selected: #2eb398;
-    tselected: #2eb39840;
+    background:     #1b2224;
+    background-alt: #222b2e;
+    foreground:     #ccd7d4;
+    selected:       #2eb398;
+    active:         #2eb398;
+    urgent:         #FC4138;
+    tbackground:  #1b222495;
 }

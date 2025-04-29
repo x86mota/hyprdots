@@ -1,0 +1,100 @@
+configuration {
+    show-icons: false;
+}
+
+/*****----- Global Configuration -----*****/
+@import "./colors/matcha-dark-sea.rasi"
+
+* {
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+/*****----- Main Window -----*****/
+window {
+    transparency: "real";
+    location: center;
+    anchor: center;
+    fullscreen: false;
+    width:  50%;
+    border: inherit;
+    background-color: inherit;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    spacing: 5%;
+    margin: 0px;
+    padding: 20px;
+    border: 2px solid;
+    border-color: @selected;
+    background-color: @background;
+    children: [ "inputbar", "listview" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    spacing: 20px;
+    children: [ "textbox-prompt-colon", "dummy-left", "prompt", "dummy-right"];
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: "";
+    font: "JetBrainsMono Nerd Font Mono Extrabold 24";
+    padding: 5px 10px;
+    background-color: @urgent;
+    text-color: @background;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+dummy-left {
+    expand: true;
+}
+
+prompt {
+    font: "JetBrainsMono Nerd Font Mono Medium 14";
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    padding: 5px 30px;
+    background-color: @background-alt;
+    text-color: @foreground;
+}
+
+dummy-right {
+    expand: true;
+}
+
+/*****----- Listview -----*****/
+listview {
+    columns: 5;
+    lines: 1;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    fixed-height: true;
+    fixed-columns: true;
+    spacing: 15px;
+}
+
+/*****----- Elements -----*****/
+element {
+    padding: 20px;
+    background-color: @background-alt;
+    text-color: @foreground;
+}
+
+element-text {
+    font: "JetBrainsMono Nerd Font Mono Bold 48 ";
+    text-color: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+element selected.normal {
+    background-color: var(selected);
+    text-color: var(background);
+}

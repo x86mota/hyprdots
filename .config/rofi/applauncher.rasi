@@ -10,7 +10,7 @@ configuration {
 }
 
 /*****----- Global Configuration -----*****/
-@import "../colors/matcha-dark-sea.rasi"
+@import "./colors/matcha-dark-sea.rasi"
 
 * {
     text-color: @foreground;
@@ -42,7 +42,7 @@ mainbox {
 inputbar {
   margin: 0% 25%;
   padding: 10px 5px;
-  background-color: @tforeground;
+  background-color: @background-alt;
   border-radius: 50px;
 }
 
@@ -64,7 +64,7 @@ entry {
 /*****----- Listview -----*****/
 listview {
   flow: horizontal;
-  dynamic: false;
+  dynamic: true;
   cycle: false;
   scrollbar: false;
   columns: 8;
@@ -81,6 +81,7 @@ element {
   padding: 15px;
   border: none;
   orientation: vertical;
+  text-color: @foreground;
 }
 
 element-icon {
@@ -90,7 +91,8 @@ element-icon {
 }
 
 element-text {
-  font: "JetBrainsMono Nerd Font 9";
+  font: "JetBrainsMono Nerd Font Medium 9";
+  text-color: inherit;
   vertical-align: 0.5;
   horizontal-align: 0.5;
   highlight: None;
@@ -112,20 +114,20 @@ element.normal.active {
 }
 
 element.selected.normal {
-  background-color: @tselected;
-  text-color: @foreground;
+  background-color: var(selected);
+  text-color: var(background);
   border-radius: 15px;
 }
 
 element.selected.urgent {
-  background-color: @tselected;
-  text-color: @foreground;
+  background-color: var(selected);
+  text-color: var(background);
   border-radius: 15px;
 }
 
 element.selected.active {
-  background-color: @tselected;
-  text-color: @foreground;
+  background-color: var(selected);
+  text-color: var(background);
   border-radius: 15px;
 }
 
