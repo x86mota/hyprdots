@@ -1,0 +1,145 @@
+configuration {
+	mode: "drun";
+  show-icons: true;
+  display-drun: "";
+	drun-display-format: "{name}";
+  disable-history: true;
+  sort: true;
+  sorting-method: "normal";
+  hover-select: true;
+}
+
+/*****----- Global Configuration -----*****/
+@import "../colors/matcha-dark-sea.rasi"
+
+* {
+    font: "JetBrainsMono Nerd Font 11";
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+/*****----- Main Window -----*****/
+window {
+  transparency: "real";
+  location: center;
+  anchor: center;
+  fullscreen: true;
+  padding: 10%;
+  background-color: @tbackground;
+  border: none;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    spacing: 10%;
+    margin: 0px;
+    padding: 5%;
+    border: none;
+    border-radius: 50px;
+    background-color: @background;
+    orientation:vertical;
+    children: [ "inputbar", "listview" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+  margin: 0% 25%;
+  padding: 10px 5px;
+  background-color: @tforeground;
+  border-radius: 50px;
+}
+
+prompt {
+  text-color: @foreground;
+  padding: 0px 15px 0px 10px;
+}
+
+textbox-prompt-colon, num-rows, num-filtered-rows, textbox-num-sep, case-indicator {
+  enabled: false;
+}
+
+entry {
+  text-color: @foreground;
+  placeholder:  "Search";
+  placeholder-color: inherit;
+}
+
+/*****----- Listview -----*****/
+listview {
+  flow: horizontal;
+  dynamic: false;
+  cycle: false;
+  scrollbar: false;
+  columns: 8;
+  lines: 3;
+  border: none;
+  fixed-columns: true;
+  fixed-height: true;
+}
+
+/*****----- Elements -----*****/
+element {
+  spacing: 0px 0px;
+  margin: 0px;
+  padding: 15px;
+  border: none;
+  orientation: vertical;
+}
+
+element-icon {
+  size: 64px;
+  vertical-align: 0.5;
+  horizontal-align: 0.5;
+}
+
+element-text {
+  font: "JetBrainsMono Nerd Font 9";
+  vertical-align: 0.5;
+  horizontal-align: 0.5;
+  highlight: None;
+}
+
+element.normal.normal {
+  background-color: transparent;
+  text-color: @foreground;
+}
+
+element.normal.urgent {
+  background-color: transparent;
+  text-color: @foreground;
+}
+
+element.normal.active {
+  background-color: transparent;
+  text-color: @foreground;
+}
+
+element.selected.normal {
+  background-color: @tselected;
+  text-color: @foreground;
+}
+
+element.selected.urgent {
+  background-color: @tselected;
+  text-color: @foreground;
+}
+
+element.selected.active {
+  background-color: @tselected;
+  text-color: @foreground;
+}
+
+element.alternate.normal {
+  background-color: transparent;
+  text-color: @foreground;
+}
+
+element.alternate.urgent {
+  background-color: transparent;
+  text-color: @foreground;
+}
+
+element.alternate.active {
+  background-color: transparent;
+  text-color: @foreground;
+}
