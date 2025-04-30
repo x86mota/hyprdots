@@ -17,7 +17,15 @@ The configurations include adjustments to the compositor's behavior, keyboard sh
 
 ## Preview
 
-![Preview](img/preview.png)
+![Preview](img/WaybarSwayNC.png)
+
+<br>
+
+![Preview](img/appLauncher.png)
+
+<br>
+
+![Preview](img/powermenu.png)
 
 <br>
 
