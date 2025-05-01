@@ -46,7 +46,8 @@
         "interval": 1
     },
     "hyprland/language": {
-        "format": "{short}"
+        "format": "{long}",
+        "on-click": "kbLayoutSwitch.sh"
     },
     "hyprland/workspaces": {
         "active-only": false,

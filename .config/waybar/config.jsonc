@@ -16,9 +16,10 @@
         "hyprland/workspaces"
     ],
     "modules-right": [
+        //"hyprland/language",
         "tray",
         "group/audio",
         "clock",
         "custom/notification"
-    ],
+    ]
 }
