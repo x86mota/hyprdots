@@ -18,7 +18,7 @@ shutdownMessage="Power off the system now?"
 
 function _confirmDialog {
 	local warningMessage="${1}"
-	echo -e "$no\n$yes" | rofi -dmenu -p "${warningMessage}" -theme ${dir}/confirmDialog.rasi
+	response=$(echo -e "$no\n$yes" | rofi -dmenu -p "${warningMessage}" -theme ${dir}/confirmDialog.rasi)
 
 	if [[ "$response" == "$yes" ]]; then
         return 0
