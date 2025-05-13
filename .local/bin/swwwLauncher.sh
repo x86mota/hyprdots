@@ -1,75 +1,107 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-function _VerifyDirectory {
-    local WallpapersDir="${HOME}/.config/wallpapers"
-    local SupportedExtentions=("jpeg" "jpg" "png" "gif" "pnm" "tga" "tiff" "webp" "bmp" "farbfeld")
-    local SupportedFiles=()
+wallpaperDir="${HOME}/.config/wallpapers"
+supportedFiles=()
+randomWallpaper=""
+currentWallpaper=""
 
-    if [[ -d ${WallpapersDir} ]]; then
-        for ext in "${SupportedExtentions[@]}"; do
-            while IFS= read -r -d '' arquive; do
-                SupportedFiles+=("$arquive")
-            done < <(find "${WallpapersDir}" -maxdepth 1 -type f -iname "*.${ext}" -print0)
-        done
-
-        [[ ${#SupportedFiles[@]} -gt 0 ]] && {
-            _SetWallpaper "${SupportedFiles[@]}"
-            return 0
-        } || notify-send "The wallpaper folder is expected to have at least 1 image." && exit 1
+function IsInstalled {
+    local package="$1"
+    if pacman -Qs "${package}" >/dev/null 2>&1; then
+        return 0
     else
-        notify-send "The wallpaper directory does not exist." 
+        notify-send "Swww" "Package swww is not installed." 
         exit 1
     fi
 }
 
-function _SetWallpaper {
-    local files=("$@")
-
-    if [ "${#files[@]}" -eq 1 ]; then
-        swww img "${files[0]}" --transition-type none
-        _SetHyprlockBG
+function CheckWallpaperDir {
+    if [[ -d ${wallpaperDir} ]]; then
+        return 0
     else
-        local timeout=900
-        local wallpaper=""
-        local previous=""
-        
-        while true; do
-            while [ "${wallpaper}" == "${previous}" ]; do
-                wallpaper="${files[RANDOM % ${#files[@]}]}"
-            done
-
-            previous="${wallpaper}"
-
-            swww img "${wallpaper}" --transition-type random --transition-fps 60 --transition-step 10 --transition-duration 10
-            _SetHyprlockBG
-            sleep "${timeout}"
-        done
+        notify-send "Swww" "The wallpaper directory does not exist." 
+        exit 1
     fi
 }
 
-function _SetHyprlockBG {
-    if pacman -Q hyprlock > /dev/null; then
-        hyprlock_path="${HOME}/.config/hypr/hyprlock.conf"
-        image=$(swww query | awk '{print $NF}')
-        sed -i "/background/,/}/s|^\(.*path =\).*|\1 $image|" "$hyprlock_path"
+function GetWallpapers {
+    local supportedExtentions=("jpeg" "jpg" "png" "gif" "pnm" "tga" "tiff" "webp" "bmp" "farbfeld")
+
+    for ext in "${supportedExtentions[@]}"; do
+        while IFS= read -r -d '' file; do
+            supportedFiles+=("$file")
+        done < <(find "${wallpaperDir}" -maxdepth 1 -type f -iname "*.${ext}" -print0)
+    done
+
+    CheckWallpaperList
+}
+
+function CheckWallpaperList {
+    if [[ ${#supportedFiles[@]} -gt 0 ]]; then
+        return 0
+    else
+        notify-send "Swww" "The wallpaper folder is empty."
+        exit 1
     fi
 }
 
-if ! pacman -Qs swww >/dev/null 2>&1; then
-    notify-send "Package swww is not installed." 
-    exit 1
-fi
+function GetRandomWall {
+    GetCurrentWallpaper
+    randomWallpaper=$(find "${supportedFiles[@]}" ! -name "$(basename "${currentWallpaper}")" | shuf -n 1 )
 
-daemon="swww-daemon"
-if pgrep -x "${daemon}" >/dev/null; then
-    _VerifyDirectory
+    echo "${randomWallpaper}"
+}
+
+function GetCurrentWallpaper {
+    local CurrWall=""
+    CurrWall=$(swww query | awk '{print $NF}')
+
+    if [[ "${CurrWall}" != "000000" ]]; then
+        currentWallpaper="${CurrWall}"
+    else
+        currentWallpaper=""
+    fi
+}
+
+function SetWallpaper {
+    GetRandomWall
+
+    if [[ -n ${currentWallpaper} ]]; then
+        swww img "${randomWallpaper}" --transition-type random --transition-fps 60 --transition-step 10 --transition-duration 10
+    else
+        swww img "${randomWallpaper}" --transition-type none
+    fi
+
+    SetHyprlockBG "${randomWallpaper}"
+}
+
+function SetHyprlockBG {
+    local image=$1
+    local hyprlockPath="${HOME}/.config/hypr/hyprlock.conf"
+    
+    if IsInstalled "hyprlock"; then
+        sed -i "/background/,/}/s|^\(.*path =\).*|\1 $image|" "$hyprlockPath"
+    fi
+}
+
+function AutoChangeWallpaper {
+    local timeout=900
+
+    while true; do
+        SetWallpaper
+        sleep "${timeout}"
+    done
+}
+
+IsInstalled "swww" 
+
+CheckWallpaperDir
+
+GetWallpapers
+
+if pgrep -x "swww-daemon" >/dev/null; then
+    AutoChangeWallpaper
 else
-    ${daemon} &
-    sleep 2
-    if pgrep -x "${daemon}" >/dev/null; then
-        _VerifyDirectory
-    else
-        notify-send "Failed to start the ${daemon} process."
-        exit 1
-    fi
+    notify-send "Swww" "The swww daemon is not running"
+    exit 1
 fi
