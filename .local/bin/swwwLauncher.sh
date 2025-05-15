@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wallpaperDir="${HOME}/.config/wallpapers"
+wallpaperDir="${1:-${HOME}/.local/share/backgrounds/}"
 supportedFiles=()
 randomWallpaper=""
 currentWallpaper=""
@@ -48,8 +48,6 @@ function CheckWallpaperList {
 function GetRandomWall {
     GetCurrentWallpaper
     randomWallpaper=$(find "${supportedFiles[@]}" ! -name "$(basename "${currentWallpaper}")" | shuf -n 1 )
-
-    echo "${randomWallpaper}"
 }
 
 function GetCurrentWallpaper {
