@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wallpaperDir="${1:-${HOME}/.local/share/backgrounds/}"
+wallpaperDir="${HOME}/.local/share/backgrounds/"
 supportedFiles=()
 randomWallpaper=""
 currentWallpaper=""
@@ -11,6 +11,15 @@ function IsInstalled {
         return 0
     else
         notify-send "Swww" "Package swww is not installed." 
+        exit 1
+    fi
+}
+
+function CheckSwwwDaemon {
+    if pgrep -x "swww-daemon" >/dev/null; then
+        return 0
+    else
+        notify-send "Swww" "The swww daemon is not running"
         exit 1
     fi
 }
@@ -91,21 +100,44 @@ function SetHyprlockBG {
 function AutoChangeWallpaper {
     local timeout=900
 
+    CheckRequirements
+
     while true; do
         SetWallpaper
         sleep "${timeout}"
     done
 }
 
-IsInstalled "swww" 
+function CheckRequirements {
+    IsInstalled "swww"
+    CheckSwwwDaemon
+    CheckWallpaperDir
+    GetWallpapers
+}
 
-CheckWallpaperDir
+function EndProcess {
+    local process="$1"
 
-GetWallpapers
+    pgrep -f "${process}" | while read -r pid; do
+        kill "${pid}"
+    done
+}
 
-if pgrep -x "swww-daemon" >/dev/null; then
+function RestartScript {
+    EndProcess "sleep"
+    
+    pid=$(pgrep -f "swwwLauncher.sh" | head -n 1)
+    kill "${pid}"
+
     AutoChangeWallpaper
-else
-    notify-send "Swww" "The swww daemon is not running"
-    exit 1
-fi
+}
+
+
+case "${1}" in
+    -u|--update)
+        RestartScript
+        ;;
+    *)
+        AutoChangeWallpaper
+        ;;
+esac
