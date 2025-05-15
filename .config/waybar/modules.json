@@ -90,7 +90,7 @@
     },
     "tray": {
         "show-passive-items": true,
-        "spacing": 5,
+        "spacing": 8,
         "reverse-direction": true
     },
     "wlr/taskbar": {

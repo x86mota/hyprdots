@@ -18,7 +18,7 @@
     "modules-right": [
         //"hyprland/language",
         "tray",
-        "group/audio",
+        //"group/audio",
         "clock",
         "custom/notification"
     ]
