@@ -66,6 +66,12 @@ function GetCurrentWallpaper {
 function SetWallpaper {
     GetRandomWall
 
+    if [[ ${#supportedFiles[@]} -eq 1 ]]; then
+        swww img "${supportedFiles[0]}" --transition-type none
+        SetHyprlockBG "${supportedFiles[0]}"
+        exit 0
+    fi
+
     if [[ -n ${currentWallpaper} ]]; then
         swww img "${randomWallpaper}" --transition-type random --transition-fps 60 --transition-step 10 --transition-duration 10
     else
