@@ -94,25 +94,25 @@ function InputToggleMute {
 
 # Notify User function
 function NotifyUser {
-    local defaultArgs="-e -h string:x-canonical-private-synchronous:volume_notif -h int:value:"$(OutputGetVolume)" -u low"
+    local defaultArgs="-e -h string:x-canonical-private-synchronous:volume_notif -u low"
     case ${1} in
         --toggle-mute)
-            notify-send ${defaultArgs} -i "$(OutputGetIcon)" "Volume Muted"
+            notify-send ${defaultArgs} -h int:value:"$(OutputGetVolume)" -i "$(OutputGetIcon)" "Volume Muted"
             ;;
         --toggle-unmute)
-            notify-send ${defaultArgs} -i "$(OutputGetIcon)" "Volume Unmuted $(OutputGetVolume)%"
+            notify-send ${defaultArgs} -h int:value:"$(OutputGetVolume)" -i "$(OutputGetIcon)" "Volume Unmuted $(OutputGetVolume)%"
             ;;
         --set-volume)
-            notify-send ${defaultArgs} -i "$(OutputGetIcon)" "Volume Level $(OutputGetVolume)%"
+            notify-send ${defaultArgs} -h int:value:"$(OutputGetVolume)" -i "$(OutputGetIcon)" "Volume Level $(OutputGetVolume)%"
             ;;
         --mic-toggle-mute)
-            notify-send ${defaultArgs} -i "$(InputGetIcon)" "Microphone Muted"
+            notify-send ${defaultArgs} -h int:value:"$(InputGetVolume)" -i "$(InputGetIcon)" "Microphone Muted"
             ;;
         --mic-toggle-unmute)
-            notify-send ${defaultArgs} -i "$(InputGetIcon)" "Microphone Unmuted $(InputGetVolume)%"
+            notify-send ${defaultArgs} -h int:value:"$(InputGetVolume)" -i "$(InputGetIcon)" "Microphone Unmuted $(InputGetVolume)%"
             ;;
         --mic-set-volume)
-            notify-send ${defaultArgs} -i "$(InputGetIcon)" "Microphone Level $(InputGetVolume)%"
+            notify-send ${defaultArgs} -h int:value:"$(InputGetVolume)" -i "$(InputGetIcon)" "Microphone Level $(InputGetVolume)%"
             ;;
     esac
 }
