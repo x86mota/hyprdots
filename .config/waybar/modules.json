@@ -40,37 +40,6 @@
             "*": 5
         }
     },
-    "pulseaudio#input": {
-        "format": "{format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": " {volume}%",
-        "on-click": "pavucontrol -t 4",
-        "tooltip-format": "{source_desc}"
-    },
-    "pulseaudio#output": {
-        "format": "{icon} {volume}%",
-        "format-muted": "",
-        "format-icons": {
-            "default": [
-                "",
-                "",
-                ""
-            ],
-            "headphone": "",
-            "headset": "",
-            "speaker": "󰓃",
-            "alsa_output.pci-0000_07_00.4.analog-stereo": "󰓃"
-        },
-        "on-click": "pavucontrol -t 3",
-        "tooltip-format": "{desc}"
-    },
-    "group/audio": {
-        "orientation": "horizontal",
-        "modules": [
-            "pulseaudio#output",
-            "pulseaudio#input"
-        ]
-    },
     "tray": {
         "show-passive-items": true,
         "spacing": 8,
