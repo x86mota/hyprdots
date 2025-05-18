@@ -1,6 +1,7 @@
 {
     "custom/logo": {
-        "format": "",
+        "tooltip": false,
+        "format": " ",
         "on-click": "powermenu.sh"
     },
     "custom/notification": {
@@ -8,14 +9,10 @@
         "justify": "center",
         "format": "{icon}",
         "format-icons": {
-            "notification": "<span foreground='#F27835'>󰂚</span>",
-            "none": "󰂚",
-            "dnd-notification": "<span foreground='#F27835'>󰂛</span>",
-            "dnd-none": "󰂛",
-            "inhibited-notification": "<span foreground='#F27835'>󰂚</span>",
-            "inhibited-none": "󰂚",
-            "dnd-inhibited-notification": "<span foreground='#F27835'>󰂛</span>",
-            "dnd-inhibited-none": "󰂛"
+            "notification": " ",
+            "none": " ",
+            "dnd-notification": " ",
+            "dnd-none": " "
         },
         "return-type": "json",
         "exec-if": "which swaync-client",
@@ -25,7 +22,7 @@
     },
     "clock": {
         "tooltip": false,
-        "format": " {:%H:%M}",
+        "format": "{:%H:%M}",
         "on-click": "gsimplecal",
         "interval": 60
     },
@@ -36,7 +33,7 @@
     "hyprland/workspaces": {
         "active-only": false,
         "all-outputs": true,
-        "format": "{name}",
+        "format": " ",
         "persistent-workspaces": {
             "*": 5
         }
@@ -48,6 +45,6 @@
     },
     "wlr/taskbar": {
         "format": "{icon}",
-        "icon-size": 16
+        "icon-size": 18
     }
 }

@@ -1,5 +1,4 @@
 * {
-    font-size: 0.85rem;
     font-weight: 600;
     border-radius: 0.3rem;
     padding-top: 0px;
@@ -17,33 +16,24 @@ tooltip {
     background: alpha(@theme_bg_color, .9);
 }
 
-#custom-logo {
-    font-size: 1.2rem;
-    color: aqua;
-    padding-left: 0.3rem;
-    padding-right: 0.5rem;
-    margin-left: 0.5rem;
+#custom-logo,
+#workspaces button label,
+#custom-notification.none,
+#custom-notification,
+#custom-notification.dnd-none,
+#custom-notification.dnd-notification {
+    font-size: 0rem;
+    padding: 0rem 0.5rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
-#workspaces button {
-    margin: 0.15rem 0.3rem;
-    padding: 0;
-}
-
-#workspaces button label {
-    margin: 0;
-    padding: 0.1rem 0.5rem;
-    font-size: 1rem;
-    color: @theme_selected_bg_color;
-}
-
-#workspaces button.active label {
-    color: @theme_bg_color;
-    background-color: @theme_selected_bg_color;
-}
-
-#workspaces button.empty label {
-    color: @theme_fg_color;
+#custom-notification.none,
+#custom-notification,
+#custom-notification.dnd-none,
+#custom-notification.dnd-notification {
+    margin-right: 0.5rem;
 }
 
 #workspaces button:hover,
@@ -56,18 +46,47 @@ tooltip {
     padding-right: 0rem;
 }
 
+#workspaces button {
+    margin: 0.15rem 0.3rem;
+    padding: 0;
+}
+
 #clock {
+    font-size: 1rem;
     padding: 0rem 0.4rem;
     color: @theme_fg_color;
 }
 
-#custom-notification {
-    color: @theme_fg_color;
-    padding-left: 0.4rem;
-    padding-right: 0.5rem;
-    margin-right: 0.5rem;
+#custom-logo {
+    margin-left: 0.5rem;
+    background-image: url('./icons/hyprland-logo.svg');
 }
 
-#tray {
-    padding: 0rem 0.3rem;
+#workspaces button label {
+    margin: 0;
+    background-image: url('./icons/workspace-not-empty.svg');
+}
+
+#workspaces button.active label {
+    background-image: url('./icons/workspace-active.svg');
+}
+
+#workspaces button.empty label {
+    background-image: url('./icons/workspace-default.svg');
+}
+
+#custom-notification.none {
+    background-image: url('./icons/notification-empty.svg');
+}
+
+#custom-notification {
+    background-image: url('./icons/notification-new.svg');
+}
+
+#custom-notification.dnd-none {
+    background-image: url('./icons/notification-disabled.svg');
+}
+
+#custom-notification.dnd-notification {
+    background-image: url('./icons/notification-disabled-new.svg');
 }
