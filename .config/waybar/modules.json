@@ -24,6 +24,7 @@
         "escape": true
     },
     "clock": {
+        "tooltip": false,
         "format": " {:%H:%M}",
         "on-click": "gsimplecal",
         "interval": 60

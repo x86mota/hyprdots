@@ -18,7 +18,7 @@ tooltip {
 }
 
 #custom-logo {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: aqua;
     padding-left: 0.3rem;
     padding-right: 0.5rem;
@@ -26,20 +26,24 @@ tooltip {
 }
 
 #workspaces button {
-    margin: 0.15rem 0rem;
+    margin: 0.15rem 0.3rem;
+    padding: 0;
 }
 
 #workspaces button label {
+    margin: 0;
+    padding: 0.1rem 0.5rem;
+    font-size: 1rem;
     color: @theme_selected_bg_color;
 }
 
 #workspaces button.active label {
-    font-size: 1.1rem;
-    color: @theme_selected_bg_color;
+    color: @theme_bg_color;
+    background-color: @theme_selected_bg_color;
 }
 
 #workspaces button.empty label {
-    color: @theme_selected_fg_color;
+    color: @theme_fg_color;
 }
 
 #workspaces button:hover,
@@ -54,27 +58,16 @@ tooltip {
 
 #clock {
     padding: 0rem 0.4rem;
-    color: @theme_selected_fg_color;
+    color: @theme_fg_color;
 }
 
 #custom-notification {
-    color: @theme_selected_fg_color;
+    color: @theme_fg_color;
     padding-left: 0.4rem;
     padding-right: 0.5rem;
     margin-right: 0.5rem;
 }
 
-#language {
-    padding: 0rem 0.3rem;
-    color: @theme_selected_fg_color;
-}
-
 #tray {
     padding: 0rem 0.3rem;
-}
-
-#pulseaudio.output,
-#pulseaudio.input {
-    padding: 0rem 0.3rem;
-    color: @theme_selected_fg_color;
 }
