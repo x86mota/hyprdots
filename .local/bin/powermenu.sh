@@ -34,7 +34,7 @@ case ${choice} in
 		hyprlock
 		;;
 	$suspend)
-		_confirmDialog && systemctl suspend
+		systemctl suspend
 		;;
 	$logout)
 		_confirmDialog "${logoutMessage}" && hyprctl dispatch exit
