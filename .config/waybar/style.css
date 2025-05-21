@@ -58,6 +58,7 @@ tooltip {
 }
 
 #custom-logo {
+    padding: 0rem 0.65rem;
     margin-left: 0.5rem;
     background-image: url('./icons/hyprland-logo.svg');
 }
