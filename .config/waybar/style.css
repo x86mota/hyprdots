@@ -17,7 +17,6 @@ tooltip {
 }
 
 #custom-logo,
-#workspaces button label,
 #custom-notification.none,
 #custom-notification,
 #custom-notification.dnd-none,
@@ -46,11 +45,6 @@ tooltip {
     padding-right: 0rem;
 }
 
-#workspaces button {
-    margin: 0.15rem 0.3rem;
-    padding: 0;
-}
-
 #clock {
     font-size: 1rem;
     padding: 0rem 0.4rem;
@@ -63,17 +57,24 @@ tooltip {
     background-image: url('./icons/hyprland-logo.svg');
 }
 
+#workspaces {
+    margin: 0.25rem 0rem;
+    background-color: rgba(0, 0, 0, .30);
+}
+
+#workspaces button {
+    margin: 0.05rem 0.2rem;
+    padding: 0;
+}
+
 #workspaces button label {
-    margin: 0;
-    background-image: url('./icons/workspace-not-empty.svg');
+    font-size: 1rem;
+    padding: 0rem 0.5rem 0rem 0.5rem;
 }
 
 #workspaces button.active label {
-    background-image: url('./icons/workspace-active.svg');
-}
-
-#workspaces button.empty label {
-    background-image: url('./icons/workspace-default.svg');
+    color: @theme_selected_bg_color;
+    border-bottom: solid 0.10rem @theme_selected_bg_color;
 }
 
 #custom-notification.none {
