@@ -1,7 +1,7 @@
 {
     "custom/logo": {
         "tooltip": false,
-        "format": " ",
+        "format": "",
         "on-click": "powermenu.sh"
     },
     "custom/notification": {
@@ -9,10 +9,10 @@
         "justify": "center",
         "format": "{icon}",
         "format-icons": {
-            "notification": " ",
-            "none": " ",
-            "dnd-notification": " ",
-            "dnd-none": " "
+            "notification": "󱅫",
+            "none": "󰂚",
+            "dnd-notification": "󰂛",
+            "dnd-none": "󰂛"
         },
         "return-type": "json",
         "exec-if": "which swaync-client",
