@@ -1,0 +1,86 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+palette = "matcha_dark_sea"
+
+add_newline = true
+
+format = """
+[╭╴\\[ ](red green)$os\
+$username\
+$hostname\
+$sudo\
+$directory\
+$git_branch\
+$git_status\
+[\\]](red green)$fill$time \n\
+[╰╴](red green)$character"""
+
+[palettes.matcha_dark_sea]
+text = "#ccd7d4"
+green = "#2eb398"
+yellow = "#F27835"
+red = "#FC4138"
+blue = "#6A7CE0"
+lime = "#8ADBA6"
+grey = "#574F4A"
+
+[os]
+disabled = false
+format = "[$symbol]($style)"
+style = "text bold"
+
+[os.symbols]
+Arch = " "
+
+[username]
+disabled = false
+show_always = true
+format = " [$user]($style)[@](text bold)"
+style_user = "green bold"
+style_root = "red bold"
+
+[hostname]
+disabled = false
+ssh_only = false
+format = "[$hostname$ssh_shymbol]($style)"
+style = "green bold"
+ssh_symbol = " 🌎"
+
+[sudo]
+allow_windows = true
+disabled = false
+format = "[ as [\\[](text bold)root[\\]](text bold)]($style)"
+style = "bold red"
+symbol = "💀"
+
+[directory]
+disabled = false
+format = "[ in ](bold green)[$path]($style)[$read_only]($read_only_style) "
+style = "blue bold"
+home_symbol = "🏠"
+truncation_length = 5
+truncation_symbol = "../"
+read_only = " 🔒"
+read_only_style = "red bold"
+
+[git_branch]
+symbol = ""
+style = "lime bold"
+format = '[$symbol $branch ]($style)'
+
+[git_status]
+style = "yellow bold"
+
+[fill]
+symbol = '─'
+style = 'bold green'
+
+[time]
+disabled = false
+format = "[$time]($style) "
+time_format = "[%H:%M]"
+style = "bold green"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
